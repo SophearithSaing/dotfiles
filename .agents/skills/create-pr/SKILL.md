@@ -29,7 +29,7 @@ Create a Pull Request that summarizes the current branch clearly and avoids subm
    - Run `gh pr create --title "<Title>" --body-file <temp-file>`.
 
 5. Clean up temporary files:
-   - Delete the temporary PR description file with `Remove-Item <temp-file>`.
+   - Delete the temporary PR description file with `rm <temp-file>`.
 
 ## Safety Rules
 
