@@ -3,9 +3,9 @@ name: catch-up
 description: Refresh stale repository context after the user has made changes between turns, especially when earlier agent assumptions may no longer match the working tree.
 ---
 
-# Get Up To Speed
+# Catch Up 
 
-Refresh context after the user has changed files, switched direction, or modified work the agent previously produced. Use this before continuing implementation when the user says they made changes, asks the agent to get up to speed, or stale context is likely.
+Refresh context after the user has changed files, switched direction, or modified work the agent previously produced. Use this before continuing implementation when the user says they made changes, asks the agent to catch up, or stale context is likely.
 
 ## Workflow
 
