@@ -36,7 +36,7 @@ Refresh context after the user has changed files, switched direction, or modifie
 
 ## Safety Rules
 
-- Do not modify files while getting up to speed unless the user also asks for an implementation change.
+- Do not modify files while catching up unless the user also asks for an implementation change.
 - Do not stage, commit, reset, checkout, or discard changes.
 - Never overwrite user edits to restore prior agent output unless explicitly requested.
 - Avoid destructive git commands.
