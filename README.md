@@ -33,6 +33,7 @@ Useful Neovim keybindings from [`.nvim/init.lua`](.nvim/init.lua):
 
 | Path                                                         | Purpose                                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------------- |
+| [`.zed/settings.json`](.zed/settings.json)                   | General Zed editor settings.                                        |
 | [`.zed/settings-for-deno.json`](.zed/settings-for-deno.json) | Folder-specific Zed settings for TypeScript projects that use Deno. |
 
 ## Pi Coding Agent
