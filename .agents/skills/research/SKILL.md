@@ -39,6 +39,8 @@ impacted areas in priority order with complexity called out.
      - Files grouped one-by-one, with exactly one concise code-symbol line for
        each file in the format `` `symbolName` // short purpose.``
      - Key risks, open questions, or dependencies.
+     - A `Resolution: TBD` line below any risk or question that needs a user
+       answer.
 
 5. Capture unrelated findings:
    - Add a final `Side Notes` section for unrelated issues noticed during research.
@@ -87,5 +89,6 @@ impacted areas in priority order with complexity called out.
 - Do not list all files separately from proposed changes; keep each file path and
   its expected changes together.
 - `Risks / Questions: <short list or None>`
+- `Resolution: TBD` under any risk or question that needs a user answer.
 - `## Side Notes`
 - Concise bullets for unrelated issues found during research, or `No unrelated issues found.`
