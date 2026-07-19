@@ -36,11 +36,8 @@ impacted areas in priority order with complexity called out.
      - Priority: `High`, `Medium`, or `Low`.
      - Complexity: `High`, `Medium`, or `Low`.
      - Why the area is impacted.
-     - Files grouped one-by-one with the expected changes inside each file group.
-     - New snippets only when introducing new code.
-     - `diff` snippets when describing modifications to existing code.
-     - Short implementation comments when exact code is unnecessary, such as
-       `// Insert a function that validates the generated set owner.`
+     - Files grouped one-by-one, with exactly one concise code-symbol line for
+       each file in the format `` `symbolName` // short purpose.``
      - Key risks, open questions, or dependencies.
 
 5. Capture unrelated findings:
@@ -85,9 +82,8 @@ impacted areas in priority order with complexity called out.
 - `Impact: <why this area is affected>`
 - `Files / Expected Changes:`
 - `#### <path/to/file>`
-- A short description of the expected change in that file.
-- For existing-code modifications, include a concise fenced `diff` snippet.
-- For new code, include only the new snippet or a concise implementation comment.
+- One concise code-symbol line in the format `` `symbolName` // short purpose.``
+- Do not include code snippets, diff snippets, or implementation comments.
 - Do not list all files separately from proposed changes; keep each file path and
   its expected changes together.
 - `Risks / Questions: <short list or None>`
