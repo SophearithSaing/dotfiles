@@ -46,6 +46,7 @@ Useful Neovim keybindings from [`.nvim/init.lua`](.nvim/init.lua):
 
 | Path                                                                               | Purpose                                                              |
 | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [`.agents/skills/catch-up/SKILL.md`](.agents/skills/catch-up/SKILL.md)             | Workflow for refreshing stale repository context.                    |
 | [`.agents/skills/create-pr/SKILL.md`](.agents/skills/create-pr/SKILL.md)           | Workflow for drafting and creating Pull Requests with GitHub CLI.    |
-| [`.agents/skills/review-changes/SKILL.md`](.agents/skills/review-changes/SKILL.md) | Workflow for reviewing committed and uncommitted repository changes. |
 | [`.agents/skills/research/SKILL.md`](.agents/skills/research/SKILL.md)             | Workflow for researching impact area of the specs.                   |
+| [`.agents/skills/review-changes/SKILL.md`](.agents/skills/review-changes/SKILL.md) | Workflow for reviewing committed and uncommitted repository changes. |
