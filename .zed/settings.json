@@ -17,6 +17,8 @@
       },
     },
   },
+  "disable_ai": true,
+  "diff_view_style": "unified",
   "mouse_wheel_zoom": true,
   "format_on_save": "on",
   "vim_mode": true,
