@@ -18,13 +18,15 @@
     },
   },
   "disable_ai": true,
-  "diff_view_style": "unified",
-  "mouse_wheel_zoom": true,
-  "format_on_save": "on",
-  "vim_mode": true,
-  "cli_default_open_behavior": "new_window",
-  "project_panel": {
-    "dock": "left",
-  },
-  "theme": "Ayu Dark",
+
+  // editor config to be used in settings.json
+  // "diff_view_style": "unified",
+  // "mouse_wheel_zoom": true,
+  // "format_on_save": "on",
+  // "vim_mode": true,
+  // "cli_default_open_behavior": "new_window",
+  // "project_panel": {
+  //   "dock": "left",
+  // },
+  // "theme": "Ayu Dark",
 }
