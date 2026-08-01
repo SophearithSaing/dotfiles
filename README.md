@@ -42,6 +42,12 @@ Useful Neovim keybindings from [`.nvim/init.lua`](.nvim/init.lua):
 | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | [`.pi/extensions/non-destructive-bash.ts`](.pi/extensions/non-destructive-bash.ts) | Pi extension that adds permission checks for potentially destructive bash commands. |
 
+## OpenCode
+
+| Path                                                                   | Purpose                                                   |
+| ---------------------------------------------------------------------- | --------------------------------------------------------- |
+| [`.config/opencode/agents/guide.md`](.config/opencode/agents/guide.md) | Primary programming mentor for pseudocode-first guidance. |
+
 ## Agent Skills
 
 | Path                                                                               | Purpose                                                              |
