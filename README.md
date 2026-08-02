@@ -11,10 +11,10 @@ A quick index for finding the configuration files in this repository.
 
 ## Neovim
 
-| Path                                           | Purpose                                                                                                                             |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| [`.nvim/init.lua`](.nvim/init.lua)             | Main Neovim configuration. Bootstraps `lazy.nvim`, configures plugins, LSP, completion, theme, Telescope, lualine, and diagnostics. |
-| [`.nvim/lazy-lock.json`](.nvim/lazy-lock.json) | Locked plugin versions for `lazy.nvim`.                                                                                             |
+| Path                                                         | Purpose                                                                                                                             |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [`.config/nvim/init.lua`](.config/nvim/init.lua)             | Main Neovim configuration. Bootstraps `lazy.nvim`, configures plugins, LSP, completion, theme, Telescope, lualine, and diagnostics. |
+| [`.config/nvim/lazy-lock.json`](.config/nvim/lazy-lock.json) | Locked plugin versions for `lazy.nvim`.                                                                                             |
 
 Useful Neovim keybindings from [`.nvim/init.lua`](.nvim/init.lua):
 
