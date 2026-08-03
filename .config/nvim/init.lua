@@ -47,7 +47,16 @@ require("lazy").setup({
                 capabilities = capabilities,
             })
 
+            vim.lsp.config("clangd", {
+                cmd = {
+                    "clangd",
+                    "--background-index",
+                    "--clang-tidy",
+                },
+            })
+
             vim.lsp.enable("gopls")
+            vim.lsp.enable("clangd")
         end,
     },
 
