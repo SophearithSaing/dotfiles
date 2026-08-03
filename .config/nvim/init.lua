@@ -3,12 +3,12 @@ vim.g.mapleader = " "
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
+    vim.fn.system({
+        "git", "clone", "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -22,119 +22,119 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 
 require("lazy").setup({
-  -- Syntax highlighting
-  {
-	  "nvim-treesitter/nvim-treesitter",
-	  branch = "master",
-	  build = ":TSUpdate",
-	  config = function()
-		  require("nvim-treesitter.configs").setup({
-			  ensure_installed = { "go", "gomod", "gowork", "gosum", "lua" },
-			  highlight = { enable = true },
-		  })
-	  end,
-  },
-  -- LSP config
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
+    -- Syntax highlighting
+    {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "master",
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = { "go", "gomod", "gowork", "gosum", "lua" },
+                highlight = { enable = true },
+            })
+        end,
     },
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    -- LSP config
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+        },
+        config = function()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      vim.lsp.config("gopls", {
-		  capabilities = capabilities,
-	  })
+            vim.lsp.config("gopls", {
+                capabilities = capabilities,
+            })
 
-	  vim.lsp.enable("gopls")
-    end,
-  },
+            vim.lsp.enable("gopls")
+        end,
+    },
 
-  -- Completion
-  {
-	  "hrsh7th/nvim-cmp",
-	  dependencies = {
-		  "hrsh7th/cmp-nvim-lsp",
-		  "hrsh7th/cmp-buffer",
-		  "L3MON4D3/LuaSnip",
-	  },
-	  config = function()
-		  local cmp = require("cmp")
+    -- Completion
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "L3MON4D3/LuaSnip",
+        },
+        config = function()
+            local cmp = require("cmp")
 
-		  cmp.setup({
-			  completion = {
-				  autocomplete = { require("cmp.types").cmp.TriggerEvent.TextChanged },
-			  },
+            cmp.setup({
+                completion = {
+                    autocomplete = { require("cmp.types").cmp.TriggerEvent.TextChanged },
+                },
 
-			  snippet = {
-				  expand = function(args)
-					  require("luasnip").lsp_expand(args.body)
-				  end,
-			  },
+                snippet = {
+                    expand = function(args)
+                        require("luasnip").lsp_expand(args.body)
+                    end,
+                },
 
-			  mapping = cmp.mapping.preset.insert({
-				  ["<C-Space>"] = cmp.mapping.complete(),
-				  ["<CR>"] = cmp.mapping.confirm({ select = true }),
-				  ["<Tab>"] = cmp.mapping.select_next_item(),
-				  ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-			  }),
+                mapping = cmp.mapping.preset.insert({
+                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                }),
 
-			  sources = {
-				  { name = "nvim_lsp" },
-				  { name = "buffer" },
-			  },
-		  })
-	  end,
-  },
+                sources = {
+                    { name = "nvim_lsp" },
+                    { name = "buffer" },
+                },
+            })
+        end,
+    },
 
-  -- Statusline: shows git branch
-  {
-	  "nvim-lualine/lualine.nvim",
-	  dependencies = {
-		  "nvim-tree/nvim-web-devicons",
-	  },
-	  config = function()
-		  require("lualine").setup({
-			  options = {
-				  theme = "auto",
-				  globalstatus = true,
-			  },
-			  sections = {
-				  lualine_b = { "branch", "diff", "diagnostics" },
-			  },
-		  })
-	  end,
-  },
+    -- Statusline: shows git branch
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = "auto",
+                    globalstatus = true,
+                },
+                sections = {
+                    lualine_b = { "branch", "diff", "diagnostics" },
+                },
+            })
+        end,
+    },
 
-  -- Quick search / fuzzy finder
-  {
-	  "nvim-telescope/telescope.nvim",
-	  dependencies = {
-		  "nvim-lua/plenary.nvim",
-	  },
-	  config = function()
-		  local builtin = require("telescope.builtin")
+    -- Quick search / fuzzy finder
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            local builtin = require("telescope.builtin")
 
-		  vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-		  vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search text" })
-		  vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-		  vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help" })
-	  end,
-  }, 
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search text" })
+            vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+            vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help" })
+        end,
+    },
 
-  -- Theme
-  {
-	  "Mofiqul/vscode.nvim",
-	  priority = 1000,
-	  config = function()
-		  require("vscode").setup({
-			  transparent = true,
-		  })
+    -- Theme
+    {
+        "Mofiqul/vscode.nvim",
+        priority = 1000,
+        config = function()
+            require("vscode").setup({
+                transparent = true,
+            })
 
-		  vim.cmd.colorscheme("vscode")
-	  end,
-  },
+            vim.cmd.colorscheme("vscode")
+        end,
+    },
 })
 
 -- Transparent background
