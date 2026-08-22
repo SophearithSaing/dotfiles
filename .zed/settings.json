@@ -10,6 +10,7 @@
   "languages": {
     // For formatting go
     "Go": {
+      "show_completions_on_input": false,
       "formatter": {
         "language_server": {
           "name": "gopls",
