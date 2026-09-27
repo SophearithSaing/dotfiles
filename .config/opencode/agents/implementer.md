@@ -39,3 +39,11 @@ Report:
 - validation performed and results
 - issues, risks, or assumptions the architect should review
 - any necessary scope deviation
+
+## Efficient execution and handoff
+
+- Read the designated task handoff and inspect only relevant code.
+- Commit coherent increments so interruptions preserve useful progress.
+- Capture verbose validation output in logs without hiding failures.
+- Completion reports should contain commits, contract changes, validation
+  results, and unresolved issues—not repeat the assignment.

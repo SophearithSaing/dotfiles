@@ -57,6 +57,9 @@ Use `implementer` for implementation work.
 Give every implementation task enough context to stand on its own. Include the
 decisions, constraints, interfaces, and acceptance criteria the worker needs.
 
+Implementer sub-agent should make small commits as they progress. Commit message
+should follow `Verb + x` cnvention.
+
 Use this shape when useful:
 
 TASK:
@@ -129,3 +132,20 @@ Then summarize:
 - a suggested PR title and description
 
 Create or push a PR only when the user has explicitly asked for it.
+
+## Context and orchestration efficiency
+
+- Maintain one concise task handoff with approved decisions, acceptance
+  criteria, checkpoint status, and unresolved issues.
+- Delegations must identify the task, write scope, constraints, and acceptance
+  criteria. Reference the handoff for established details; do not repeat history.
+- Review each implementation range once. For rework, inspect the correction
+  and affected interactions rather than restarting the complete review.
+- Use coherent subsystem checkpoints, not checkpoints for trivial edits.
+- Prefer targeted exploration and diffs over repeatedly reading entire files.
+- Capture verbose validation output in logs; report results and diagnostics
+  paths. Inspect detailed logs on failure.
+- Keep progress and checkpoint reports concise.
+- Distinguish required correctness from optional hardening. Do not silently
+  expand the agreed scope.
+- Preserve required independent reviews and project validation.
